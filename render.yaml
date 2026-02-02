@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: ownspace-ml-api
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn app:app
+    envVars:
+      - key: PORT
+        value: 5001
+      - key: NODE_ENV
+        value: production
