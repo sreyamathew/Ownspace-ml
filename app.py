@@ -81,12 +81,27 @@ def predict_price():
         # 3. Predict
         prediction = model.predict(X)[0]
         
+        # 4. Risk Assessment Logic (Simulated for Demo)
+        # Low Risk: High amenitiesScore, Low propertyAge
+        # High Risk: Low amenitiesScore, High propertyAge
+        amenities = df['amenitiesScore'].iloc[0]
+        age = df['propertyAge'].iloc[0]
+        
+        risk_score = (amenities / 10.0) - (age / 50.0)
+        if risk_score > 0.6:
+            risk_category = "Low"
+        elif risk_score > 0.3:
+            risk_category = "Medium"
+        else:
+            risk_category = "High"
+
         # Format response
         return jsonify({
             "predicted_price": int(prediction),
+            "risk_category": risk_category,
             "augmented_features": {
-                "amenitiesScore": df['amenitiesScore'].iloc[0],
-                "propertyAge": int(df['propertyAge'].iloc[0])
+                "amenitiesScore": float(amenities),
+                "propertyAge": int(age)
             }
         })
 
