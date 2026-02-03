@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 flask
 flask-cors
 gunicorn
@@ -7,3 +8,12 @@ scikit-learn
 xgboost
 joblib
 requests
+=======
+requests
+pandas
+numpy
+scikit-learn
+xgboost
+flask
+joblib
+>>>>>>> fc3e6ced5ddc93d7448746c39205db828a73924e

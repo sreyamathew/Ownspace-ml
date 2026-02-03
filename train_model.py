@@ -11,7 +11,11 @@ import copy
 from feature_augmentation import augment_features
 
 # Configuration
+<<<<<<< HEAD
 API_URL = "http://127.0.0.1:3001/api/properties"
+=======
+API_URL = "http://localhost:5000/api/properties"
+>>>>>>> fc3e6ced5ddc93d7448746c39205db828a73924e
 MODEL_PATH = "price_model.pkl"
 ENCODER_PATH = "location_encoder.joblib"
 
